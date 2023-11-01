@@ -72,7 +72,7 @@ class Ui_Form(object):
         self.table.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.table.setRowCount(0)
-        self.table.setColumnCount(2)
+        self.table.setColumnCount(1)
         self.table.setObjectName("table")
         self.table.horizontalHeader().setVisible(True)
         self.table.horizontalHeader().setCascadingSectionResizes(False)

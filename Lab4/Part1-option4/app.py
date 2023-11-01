@@ -9,10 +9,9 @@ class App(design.Ui_Form, QMainWindow):
         super().__init__()
         self.setupUi(self)
 
-        self.table.setHorizontalHeaderLabels(['X', 'Y'])
-        header = self.table.horizontalHeader()
-        for i in range(2):
-            header.setSectionResizeMode(i, QHeaderView.ResizeMode.Stretch)
+        self.table.setHorizontalHeaderItem(0, getTableItem('Таблица значений функции'))
+        self.table.horizontalHeader().setSectionResizeMode(
+            0, QHeaderView.ResizeMode.Stretch)
         
         self.buttonResult.clicked.connect(self.resultHandler)
         self.buttonClear.clicked.connect(self.clearHandler)
@@ -32,6 +31,13 @@ class App(design.Ui_Form, QMainWindow):
         if self.boxStep.text() == '':
             QMessageBox.about(self, "Ошибка", "Пожалуйста, введите шаг!")
             return
+        
+        if self.table.columnCount() == 1:
+            self.table.setColumnCount(2)
+            self.table.setHorizontalHeaderLabels(['X', 'Y'])
+            header = self.table.horizontalHeader()
+            for i in range(2):
+                header.setSectionResizeMode(i, QHeaderView.ResizeMode.Stretch)
          
         iter = getBoxFloatValue(self.boxStartValue)
         border = getBoxFloatValue(self.boxEndValue)
@@ -61,6 +67,10 @@ class App(design.Ui_Form, QMainWindow):
         self.boxEndValue.setValue(6.0)
         self.boxStep.setValue(1.0)
         self.table.setRowCount(0)
+        self.table.setColumnCount(1)
+        self.table.setHorizontalHeaderItem(0, getTableItem('Таблица значений функции'))
+        self.table.horizontalHeader().setSectionResizeMode(
+            0, QHeaderView.ResizeMode.Stretch)
 
     def boxStartValueEditerFinishedHandler(self):
         if getBoxFloatValue(self.boxStartValue) > getBoxFloatValue(self.boxEndValue):
