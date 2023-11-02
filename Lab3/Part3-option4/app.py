@@ -37,10 +37,10 @@ class App(design.Ui_Form, QMainWindow):
         if self.boxR.text() == '':
             QMessageBox.about(self, "Ошибка", "Пожалуйста, введите число R!")
             return
-        if self.boxX.text() == '':
+        if self.boxX.text() == '' or self.boxX.text() == '-':
             QMessageBox.about(self, "Ошибка", "Пожалуйста, введите X точки!")
             return
-        if self.boxY.text() == '':
+        if self.boxY.text() == '' and self.boxY.text() == '-':
             QMessageBox.about(self, "Ошибка", "Пожалуйста, введите Y точки!")
             return
         
