@@ -1,20 +1,18 @@
 import pytest
 from app import computeFunction
 
-def test1():
-    assert computeFunction(-10) == 2
-
-def test2():
-    assert computeFunction(-6) == 0
-
-def test3():
-    assert computeFunction(0) == -3
-
-def test4():
-    assert computeFunction(3) == 0
-
-def test5():
-    assert computeFunction(6) == 3
+@pytest.mark.parametrize(
+        "test, ans",
+        [
+            (-10,2),
+            (-6,0),
+            (0,-3),
+            (3,0),
+            (6,3)
+        ]
+)
+def test(test, ans):
+    assert computeFunction(test) == ans
 
 if __name__ == '__main__':
     pytest.main(['-v', 'test.py'])

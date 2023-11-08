@@ -74,6 +74,9 @@ class App(design.Ui_Form, QMainWindow):
             QMessageBox.about(self, "Ошибка", "Пожалуйста, введите значение N!")
             return
         
+        if self.table2.rowCount() == 0:
+            self.editFinalNTask2()
+        
         C = getBoxFloatValue(self.boxC2)
         rows = int(self.boxN2.text())
         for i in range(rows):
