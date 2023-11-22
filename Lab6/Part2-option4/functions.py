@@ -13,14 +13,21 @@ def f1a(arr):
     def gs(n):
         n = abs(n)
         s = 0
-        for i in range(2, n):
+        i = 2
+        while i*i <= n:
             if n % i == 0:
-                s += i
+                s += i + n//i
+                if i*i == n:
+                    s -= i
+            i += 1
         return s
     mini = 0
+    mini_gs = inf
     for i, val in enumerate(arr):
-        if gs(val) < gs(arr[mini]):
+        val_gs = gs(val)
+        if val_gs < mini_gs:
             mini = i
+            mini_gs = val_gs
     arr[mini] = sum(arr) / len(arr)
     return arr
 
