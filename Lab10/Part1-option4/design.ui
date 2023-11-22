@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1110</width>
+    <height>358</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1110</width>
+    <height>358</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1110</width>
+    <height>358</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Автомобиль в одномерном пространстве</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>421</width>
+     <height>332</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridData">
+    <item row="9" column="0">
+     <widget class="QLabel" name="labelRemaningFuel">
+      <property name="text">
+       <string>Топлива осталось</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QDoubleSpinBox" name="boxNewCost">
+      <property name="maximum">
+       <double>9999999999999.990234375000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="labelServiceInterval">
+      <property name="text">
+       <string>Сервисный интервал (дней)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="boxColor"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelBrand">
+      <property name="text">
+       <string>Марка</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="labelMaxSpeed">
+      <property name="text">
+       <string>Макс. скорость (км/ч)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelColor">
+      <property name="text">
+       <string>Цвет</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QDoubleSpinBox" name="boxRemaningFuel">
+      <property name="maximum">
+       <double>999999999.990000009536743</double>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QDoubleSpinBox" name="boxMaxSpeed">
+      <property name="minimum">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>9999999.990000000223517</double>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QDoubleSpinBox" name="boxMileage">
+      <property name="maximum">
+       <double>999999999.990000009536743</double>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelDriveType">
+      <property name="text">
+       <string>Тип привода</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="labelGPS">
+      <property name="text">
+       <string>GPS (км)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="boxDriveType"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelMileage">
+      <property name="text">
+       <string>Пробег (км)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="boxEngineType"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelNewCost">
+      <property name="text">
+       <string>Цена нового автомобиля ($)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="LabelEngineType">
+      <property name="text">
+       <string>Тип двигателя</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QDoubleSpinBox" name="boxFuelConsumption">
+      <property name="minimum">
+       <double>0.100000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>999999999.990000009536743</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="boxBrand"/>
+    </item>
+    <item row="11" column="1">
+     <widget class="QSpinBox" name="boxServiceInterval">
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999999</number>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QDoubleSpinBox" name="boxGPS">
+      <property name="minimum">
+       <double>-9999999999999.000000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>9999999999.989999771118164</double>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="0">
+     <widget class="QLabel" name="labelFuelConsumption">
+      <property name="text">
+       <string>Расход топлива на км</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="labelNowCost">
+      <property name="text">
+       <string>Цена на данный момент ($)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QDoubleSpinBox" name="boxNowCost">
+      <property name="maximum">
+       <double>9999999999999.990234375000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>10</y>
+     <width>661</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridMethods">
+    <item row="4" column="0">
+     <widget class="QLabel" name="labelTimeOfTrip">
+      <property name="text">
+       <string>Сколько времени до точки при максимальной скорости?</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QDoubleSpinBox" name="boxGPSTimeOfTrip">
+      <property name="maximum">
+       <double>9999999999.989999771118164</double>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="labelGPSTimeOfTrip">
+      <property name="text">
+       <string>gps</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QDoubleSpinBox" name="boxGPSDistanceToPoint">
+      <property name="maximum">
+       <double>999999999.990000009536743</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="labelGPSDistanceToPoint">
+      <property name="text">
+       <string>gps</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="buttonDistanceToPoint">
+      <property name="text">
+       <string>Проверить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QDoubleSpinBox" name="boxFuelCostCostOfTrip">
+      <property name="maximum">
+       <double>99999999999.990005493164063</double>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="labelGPSCostOfTrip">
+      <property name="text">
+       <string>gps</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDoubleSpinBox" name="boxGPSGoToCity">
+      <property name="maximum">
+       <double>99999999999.990005493164063</double>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="labelFuelCostCostOfTrip">
+      <property name="text">
+       <string>цена топлива $</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" rowspan="2">
+     <widget class="QLabel" name="labelCostOfTrip">
+      <property name="text">
+       <string>Цена поездки до точки</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QDoubleSpinBox" name="boxGPSCostOfTrip">
+      <property name="maximum">
+       <double>999999999.990000009536743</double>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="buttonGoToCity">
+      <property name="text">
+       <string>Проверить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelGoToCity">
+      <property name="text">
+       <string>Вероятность доехать до города</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelDistanceToPoint">
+      <property name="text">
+       <string>Расстояние до точки</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="labelGPSGoToCity">
+      <property name="text">
+       <string>gps</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="buttonTimeOfTrip">
+      <property name="text">
+       <string>Проверить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="labelPriceLoss">
+      <property name="text">
+       <string>Сколько автомобиль потерял в цене после покупки?</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3" rowspan="2">
+     <widget class="QPushButton" name="buttonCostOfTrip">
+      <property name="text">
+       <string>Проверить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="3">
+     <widget class="QPushButton" name="buttonPriceLoss">
+      <property name="text">
+       <string>Проверить</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
