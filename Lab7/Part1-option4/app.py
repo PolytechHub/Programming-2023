@@ -2,6 +2,7 @@ import sys
 import design
 from functions import calsDevs, f1
 from PyQt6.QtWidgets import QMainWindow, QApplication, QSpinBox, QLineEdit
+from random import randint
 
 class App(design.Ui_Form, QMainWindow):
     def __init__(self):
@@ -23,6 +24,7 @@ class App(design.Ui_Form, QMainWindow):
                         spinbox = QSpinBox()
                         spinbox.setMinimum(-100)
                         spinbox.setMaximum(100)
+                        spinbox.setValue(randint(-100, 100))
                         self.table.setCellWidget(i, j, spinbox)
             for i in range(n):
                 if self.table.cellWidget(i, n) == None or not(self.table.cellWidget(i, j).isReadOnly()):

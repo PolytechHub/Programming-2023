@@ -13,6 +13,8 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(708, 470)
+        Form.setMinimumSize(QtCore.QSize(708, 470))
+        Form.setMaximumSize(QtCore.QSize(708, 470))
         self.boxN = QtWidgets.QSpinBox(parent=Form)
         self.boxN.setGeometry(QtCore.QRect(20, 10, 42, 22))
         self.boxN.setObjectName("boxN")
