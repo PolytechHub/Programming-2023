@@ -29,6 +29,7 @@ from functions import calsDevs, f1, f2
         ]
 )
 def test_f2(matrix, C, ans):
+    # Тестировать нужно не f2, а calsDevs, иначе получите 3 балла от Армаш
     assert f2(matrix, C) == ans
 
 if __name__ == '__main__':
