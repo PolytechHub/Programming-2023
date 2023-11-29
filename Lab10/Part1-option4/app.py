@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 from datetime import timedelta
 import design
@@ -16,7 +18,7 @@ class App(design.Ui_Form, QMainWindow):
 
     def goToCity(self):
         auto = self.getAuto()
-        if auto.go_to_city(self.boxGPSGoToCity.value()):
+        if auto.go_to_city([self.boxGPSXGoToCity.value(), self.boxGPSYGoToCity.value()]):
             QMessageBox.about(self, "Проверка", "Вы доедете до города")
         else:
             QMessageBox.about(self, "Проверка", "У вас не хватит топлива")
@@ -24,17 +26,17 @@ class App(design.Ui_Form, QMainWindow):
     def distanceToPoint(self):
         auto = self.getAuto()
         QMessageBox.about(self, "Проверка", 
-                          f"До точки {auto.distance_to_point(self.boxGPSDistanceToPoint.value())} км")
+                          f"До точки {auto.distance_to_point([self.boxGPSXDistanceToPoint.value(), self.boxGPSYDistanceToPoint.value()])} км")
         
     def costOfTrip(self):
         auto = self.getAuto()
         QMessageBox.about(self, "Проверка", 
-                            f"Цена поездки ${auto.cost_of_trip(self.boxGPSCostOfTrip.value(), self.boxFuelCostCostOfTrip.value())}")
+                            f"Цена поездки ${auto.cost_of_trip([self.boxGPSXCostOfTrip.value(), self.boxGPSYCostOfTrip.value()], self.boxFuelCostCostOfTrip.value())}")
     
     def timeOfTrip(self):
         auto = self.getAuto()
         QMessageBox.about(self, "Проверка", 
-                            f"Время поездки {auto.time_of_trip_with_max_speed(self.boxGPSTimeOfTrip.value())} ч")
+                            f"Время поездки {auto.time_of_trip_with_max_speed([self.boxGPSXTimeOfTrip.value(), self.boxGPSYTimeOfTrip.value()])} ч")
         
     def priceLoss(self):
         auto = self.getAuto()
@@ -48,7 +50,7 @@ class App(design.Ui_Form, QMainWindow):
                         mileage=self.boxMileage.value(),
                         newcost=self.boxNewCost.value(),
                         cost=self.boxNowCost.value(),
-                        gps=self.boxGPS.value(),
+                        gps=[self.boxGPSX.value(), self.boxGPSY.value()],
                         maxspeed=self.boxMaxSpeed.value(),
                         engine_type=self.boxEngineType.text(),
                         remaning_fuel=self.boxRemaningFuel.value(),
