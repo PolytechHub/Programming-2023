@@ -16,7 +16,7 @@ class App(design.Ui_Form, QMainWindow):
         self.tableReport.resizeColumnsToContents()
         self.boxStringsTotal.editingFinished.connect(self.boxEditedFinished)
         self.buttonResult.clicked.connect(self.result)
-        self.labelDate.setText(str(datetime.datetime.today().date()))
+        self.labelDate.setText(datetime.datetime.today().date().strftime("%d.%m.%Y"))
 
     def boxEditedFinished(self):
         n = self.boxStringsTotal.value()
@@ -41,6 +41,7 @@ class App(design.Ui_Form, QMainWindow):
         values = cals(k, p, self.getInitialTableValues())
         self.tableReport.setRowCount(0)
         self.tableReport.setRowCount(len(values))
+        totalDiscount = 0
         for i, val in enumerate(values):
             name = QLineEdit()
             name.setReadOnly(True)
@@ -58,6 +59,8 @@ class App(design.Ui_Form, QMainWindow):
             discount.setReadOnly(True)
             discount.setText(str(val['discount']))
             self.tableReport.setCellWidget(i, 3, discount)
+            totalDiscount += val['discount']
+        self.boxTotalSum.setText(str(totalDiscount))
     
     def getInitialTableValues(self):
         n = self.boxStringsTotal.value()

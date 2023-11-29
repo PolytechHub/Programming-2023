@@ -74,6 +74,13 @@ class Ui_Form(object):
         self.boxP = QtWidgets.QDoubleSpinBox(parent=Form)
         self.boxP.setGeometry(QtCore.QRect(160, 530, 51, 22))
         self.boxP.setObjectName("boxP")
+        self.boxTotalSum = QtWidgets.QLineEdit(parent=Form)
+        self.boxTotalSum.setGeometry(QtCore.QRect(460, 530, 113, 22))
+        self.boxTotalSum.setReadOnly(True)
+        self.boxTotalSum.setObjectName("boxTotalSum")
+        self.labelTotalSum = QtWidgets.QLabel(parent=Form)
+        self.labelTotalSum.setGeometry(QtCore.QRect(400, 530, 58, 16))
+        self.labelTotalSum.setObjectName("labelTotalSum")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -88,3 +95,4 @@ class Ui_Form(object):
         self.labelReport.setText(_translate("Form", "Отчет о снижении цены от"))
         self.labelK.setText(_translate("Form", "K шт"))
         self.labelP.setText(_translate("Form", "p%"))
+        self.labelTotalSum.setText(_translate("Form", "Итого"))
