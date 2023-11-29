@@ -14,9 +14,10 @@ def f1a(arr: list, a: int):
     minindex = -1
     minval = inf
     for i, val in enumerate(arr):
-        if val == 0:
-            minindex = i
-            minval = val
+        if val == 0: 
+            if minval > val:
+                minindex = i
+                minval = val
             continue
         evens = 0
         product = 1
