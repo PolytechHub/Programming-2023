@@ -1,11 +1,16 @@
 import sys
 import design
 from PyQt6.QtWidgets import QMainWindow, QApplication, QSpinBox, QLineEdit
+from PyQt6.QtCore import QRegularExpression
+from PyQt6.QtGui import QRegularExpressionValidator
 
 class App(design.Ui_Form, QMainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.usernameBox.setValidator(
+            QRegularExpressionValidator(
+                QRegularExpression("^[a-zA-Zа-яА-Я0-9]+"), self.usernameBox))
         self.resultButton.clicked.connect(self.resultHandler)
 
     def resultHandler(self):
