@@ -1,4 +1,4 @@
-from os import path, makedirs
+from os import path, makedirs, getenv
 from pathlib import Path
 from platform import system
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
@@ -55,7 +55,7 @@ class MainWindow(Ui_Form, QMainWindow):
             self.dataFolder =\
                 f'{Path.home()}/Library/Mobile Documents/com~apple~CloudDocs/StorePig'
         else:
-            self.dataFolder = 'StorePigData'
+            self.dataFolder = f'{getenv("LOCALAPPDATA")}\\StorePigData'
 
         # Load main tree
         if path.exists(f'{self.dataFolder}/tree.pkl'):
