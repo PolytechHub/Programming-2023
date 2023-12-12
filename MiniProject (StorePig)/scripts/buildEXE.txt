@@ -1,0 +1,5 @@
+# Mac OS
+pyinstaller --onefile --noconsole --icon ui/icon.ico app.py addElement.py addElementUI.py mainWindow.py mainWindowUI.py treeController.py treeWidget.py
+
+# Windows
+pyinstaller --onefile --noconsole --icon ui\icon.ico app.py addElement.py addElementUI.py mainWindow.py mainWindowUI.py treeController.py treeWidget.py
